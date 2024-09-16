@@ -19,6 +19,10 @@
 
 
 # 記錄.git的變化
+## 第一次git commit
+![first commit](./assets/first.png)
+## 第二次git commit
+![second commit](./assets/second.png)
 
 # commit message 怎麼寫比較好
 * 在過去自己和同學的project中，我們習慣用feat/refactor/fix等title標明功能，在加上自己在這次版本做的更動，儘量簡要易懂為主
