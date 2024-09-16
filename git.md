@@ -16,3 +16,10 @@
 
 ## head
 * HEAD就是指向當前branch的指標
+
+
+# 記錄.git的變化
+
+# commit message 怎麼寫比較好
+* 在過去自己和同學的project中，我們習慣用feat/refactor/fix等title標明功能，在加上自己在這次版本做的更動，儘量簡要易懂為主
+* 在branch name上的命名也會用feat/kkai0828/README 這種方式來讓其他人更快知道這個branch在做什麼
