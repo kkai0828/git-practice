@@ -18,7 +18,7 @@
 * HEAD就是指向當前branch的指標
 [br]
 #### 參考資料
-[30 天精通 Git 版本控管][https://github.com/doggy8088/Learn-Git-in-30-days]
+[30 天精通 Git 版本控管][ref]
 [ref]: https://github.com/doggy8088/Learn-Git-in-30-days
 
 
