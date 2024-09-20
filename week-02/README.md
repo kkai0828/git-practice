@@ -13,14 +13,16 @@
 
    - 此版本的特色在於內建的 `.env` 支援。
    - 原本需要使用第三方套件如 `dotenv` 的功能，現在可直接透過 Node.js 執行。
-   - ![Node.js v20.6.0 .env 支援](./assets/nodev20.6.0.png)
+   - Node.js v20.6.0 .env 支援
+     <img src="./assets/nodev20.6.0.png" width=400 />
 
 2. **`import.meta.resolve` unflagged**
 
    - `import.meta.resolve(specifier)` 返回一個絕對 URL 字串，該 URL 對應於傳入的 specifier。
    - 類似於 CommonJS 中的 `require.resolve`，但對 ES 模組語法進行了優化。
    - 此功能使 Node.js 對齊其他瀏覽器及伺服器運行環境。
-   - ![使用 `import.meta.resolve` 獲取絕對路徑](./assets/resolve.png)
+   - `import.meta.resolve` 獲取絕對路徑
+     <img src="./assets/resolve.png" width=400 />
 
 3. **其餘功能**
    - 待研究...
