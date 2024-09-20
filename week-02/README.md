@@ -41,21 +41,28 @@
 - nvm 用於管理Node.js的版本
 - 開發人員可以利用nvm管理單台機器上的多個Node.js版本，確保不同項目的兼容性
 - 常用指令:
-
-```Shell
-下載指定版本的Node
-$ nvm install <version>
-查看可安裝的版本
-$ nvm ls-remote
-查看已安裝的版本
-$ nvm ls
-使用指定版本
-$ nvm use v10.6.3
-查看目前使用版本
-$ nvm current
-```
+   - 下載指定版本的Node
+   ```Shell
+   $ nvm install <version>
+   ```
+   - 查看可安裝的版本
+   ```Shell
+   $ nvm ls-remote
+   ```
+   - 查看已安裝的版本
+   ```Shell
+   $ nvm ls
+   ```
+   - 使用指定版本
+   ```Shell
+   $ nvm use v10.6.3
+   ```
+   - 查看目前使用版本
+   ```Shell
+   $ nvm current
+   ```
 
 #### 參考資料
 
-[什麼是 nvm、npm、Node.js | Javascript](https://benzhub.github.io/post/javascript/023-whats-nvm-npm-nodejs/)
-[nvm 常見使用](https://titangene.github.io/article/nvm.html)
+[什麼是 nvm、npm、Node.js | Javascript](https://benzhub.github.io/post/javascript/023-whats-nvm-npm-nodejs/) <br/>
+[nvm 常用指令](https://titangene.github.io/article/nvm.html)
