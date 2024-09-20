@@ -49,17 +49,24 @@ cp a.txt c.txt
 ```
 - use `git hash-object ./a.txt ./b.txt ./c.txt` to check
 <img src="./assets/third.png" width=300/>
+
 - 可以看見這三個檔案的SHA值實際上是相同的，因為SHA的原理就是給相同的內容，就會生成對應的HASh值
+  
 ### 那git怎麼區分這三個檔案
-- 用 ```git ls-treee HEAD``` 可以看到當前HEAD上檔案和目錄，輸出包含（檔案權限、檔案類型、HASH值、檔案名稱）
+
+- 用 `git ls-tree HEAD` 可以看到當前HEAD上檔案和目錄，輸出包含（檔案權限、檔案類型、HASH值、檔案名稱）
 <img src="./assets/fourth.png" width=300/>
+
 - 可以看到相同內容的檔案，雖擁有相同HASH值，但有不同檔名，因為檔案路徑和檔案名稱都存在tree物件中(tree物件也存在.git/objects中)
-- 可運用 ```git cat-file -p``` 查看內容和 `git cat-file -t` 查看檔案類型
+- 可運用 `git cat-file -p` 查看內容和 `git cat-file -t` 查看檔案類型
+  
 ### 結論
+
 - a.txt b.txt c.txt 的檔名和路徑存在根目錄的tree物件中
 - 用`git rev-parse HEAD^{tree}`可以獲得根目錄的tree物件HASH值，如下圖
 <img src="./assets/fifth.png" width=300/>
-- 再用```git cat-file -t``` ```git cat-file -p``` 就可以看到檔案類別是tree以及根目錄下的內容
+
+- 再用`git cat-file -t`和`git cat-file -p` 就可以看到檔案類別是tree以及根目錄下的內容
 
 
 ## commit message 怎麼寫比較好
