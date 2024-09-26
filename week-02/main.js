@@ -4,7 +4,7 @@ import Stack from './stack.js'
 
 let stack = new Stack()
 stack.print()
-
+console.log('push: 5, 8, 6')
 stack.push(5)
 stack.push(8)
 stack.push(6)
