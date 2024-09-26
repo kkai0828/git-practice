@@ -1,10 +1,10 @@
 function sum(ary) {
   // TODO: sum all elements in ary
-  
+
   // if ary is a number, return sum of 1 to ary
-  if(typeof(ary) === 'number'){
+  if (typeof ary === 'number') {
     let tmp = []
-    for(let i = 1; i <= ary; i++){
+    for (let i = 1; i <= ary; i++) {
       tmp.push(i)
     }
     return tmp.reduce((acc, cur) => acc + cur, 0)
@@ -20,15 +20,15 @@ function sum2(ary) {
 }
 
 function sum3(ary) {
-  let sum = 0;
-  ary.map(num => {
-    sum += num;
-  });
-  return sum;
+  let sum = 0
+  ary.map((num) => {
+    sum += num
+  })
+  return sum
 }
 
 function sum4(ary) {
-  return eval(ary.join('+'));
+  return eval(ary.join('+'))
 }
 
 console.log(sum([1, 5, 3, 2])) // 11
