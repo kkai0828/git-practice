@@ -17,7 +17,7 @@ console.log('stack.pop() ->', stack.pop())
 console.log('---')
 // test peek
 stack.print()
-console.log("stack.peek() ->", stack.peek())
+console.log('stack.peek() ->', stack.peek())
 // test peek do not remove the top element
 stack.print()
 console.log('---')
@@ -32,3 +32,19 @@ console.log('stack.clear()')
 stack.clear()
 // test  isEmpty after clear
 console.log('stack.empty() ->? ', stack.isEmpty())
+// test pop() and peek() when stack is empty
+console.log('---')
+console.log('stack.pop()')
+if (stack.pop() == undefined) {
+  console.log('stack is empty. Can not pop()')
+} else {
+  console.log('stack is not empty :')
+  stack.print()
+}
+console.log('stack.peek()')
+if (stack.peek() == undefined) {
+  console.log('stack is emptym can not peek()')
+} else {
+  console.log('stack is not empty :')
+  stack.print()
+}
