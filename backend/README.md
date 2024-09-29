@@ -64,6 +64,6 @@ console.log(add(2, 3))
 
 ### 參考資料
 
-[package.json 需要了解的事](https://hackmd.io/@Hsuan93625/HkUdUG8zd)
-[【前端工程化】配置package.json中scripts命令脚本，新手必学](https://blog.csdn.net/qq_17335549/article/details/126784270)
+[package.json 需要了解的事](https://hackmd.io/@Hsuan93625/HkUdUG8zd)<br/>
+[【前端工程化】配置package.json中scripts命令脚本，新手必学](https://blog.csdn.net/qq_17335549/article/details/126784270)<br/>
 [【程式語言 - Javascript】 ESM與CJS](https://vocus.cc/article/649cc0e0fd89780001a7d34d)
