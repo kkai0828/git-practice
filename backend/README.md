@@ -10,17 +10,16 @@
 - 用來執行 npm run 指令的
 - 範例如下："test" 為名稱，通常依據一些規範如dev, build, test等。
 - 後面的 "node test.js" 則為實際指令，這代表在執行 `npm run test` 時，實際上是跑`node test.js`這個指令。
-  
-    ```
-    "scripts":{
-        "test": "node test.js"
-    }
-    ```
 
-## Port number 要怎麼以環境變數來設定？  
+  ```
+  "scripts":{
+      "test": "node test.js"
+  }
+  ```
+
+## Port number 要怎麼以環境變數來設定？
 
 - 我在宣告 port 時用 `const port = process.env.PORT || 3000` 來以環境變數設定，若沒有設定則預設 Port 3000。
-
 
 - 執行結果：<br/>
   <img src="./assets/image/envPORT.png" width="500"/>
@@ -30,15 +29,15 @@
 - 在.env 檔中設定 PORT=4000，並在 package.json 中加入 `"dev" : "node --env-file=.env app.js"`
   這樣在執行 `npm run dev` 指令時，就會用 .env 中設定的 PORT number 來執行 app.js。
 
-    ``` js
-    // .env
-      PORT=4000
-    
-    // package.json
-      "scripts": {
-        "dev" : "node --env-file=.env app.js"
-      },
-    ```
+  ```js
+  // .env
+    PORT=4000
+
+  // package.json
+    "scripts": {
+      "dev" : "node --env-file=.env app.js"
+    },
+  ```
 
 - 其他方法：
   - `npm install dotnet` 並在 app.js 中 require('dotnet').config()。
@@ -55,36 +54,35 @@
 - CJS：CommonJS 的模組系統，最初是為了在伺服器端使用 Node.js 而開發的，但也被廣泛用於前端開發。
 - CJS 使用 require 導入模組，module.export 或 exports 定義導出的內容
 
-    ```js
-    // math.js
-    exports.add = function(a,b){
-        return a + b
-    }
-    
-    // main.js
-    var math = require('./main.js')
-    console.log(math.add(2,3))
-    ```
+  ```js
+  // math.js
+  exports.add = function (a, b) {
+    return a + b
+  }
+
+  // main.js
+  var math = require('./main.js')
+  console.log(math.add(2, 3))
+  ```
 
 - ESM：是 ECMAScript 的模組系統，從 ES6 開始成為 JS 的一部份。
 - 使用 import, export 來定義和導入模組。
-    
-    ```js
-    // math.js
-    export function add(a,b) {
-      return a + b
-    }
-    
-    // main.js
-    import { add } from './math.js'
-    console.log(add(2,3))
-    ```
+
+  ```js
+  // math.js
+  export function add(a, b) {
+    return a + b
+  }
+
+  // main.js
+  import { add } from './math.js'
+  console.log(add(2, 3))
+  ```
 
 - 差異：
-    
-    1. 加載時間：ESM 是靜態加載，在編譯時就可以確定模組的依賴關係；CJS 是動態加載，在執行時依需求動態加載。
-    2. 運行環境：ESM 可以在現代瀏覽器中使用，但需要在 <script> 標籤上使用 type="module" 屬性；而 CJS 主要用於 Node.js 環境。
-    3. 預設導出：ESM 支援預設導出，可以使用 export default，而 CJS 沒有內建的預設導出機制。
+  1. 加載時間：ESM 是靜態加載，在編譯時就可以確定模組的依賴關係；CJS 是動態加載，在執行時依需求動態加載。
+  2. 運行環境：ESM 可以在現代瀏覽器中使用，但需要在 <script> 標籤上使用 type="module" 屬性；而 CJS 主要用於 Node.js 環境。
+  3. 預設導出：ESM 支援預設導出，可以使用 export default，而 CJS 沒有內建的預設導出機制。
 
 ### 參考資料
 
@@ -112,4 +110,32 @@
   要如何得知此資訊要送往哪個應用程式，就是靠port連接阜來分辨，port的數字從0–65535。[ref](https://bc-1221.medium.com/3%E5%88%86%E9%90%98%E7%B6%B2%E8%B7%AF%E5%9F%BA%E7%A4%8E-%E4%BB%80%E9%BA%BC%E6%98%AFip-port-%E9%80%A3%E6%8E%A5%E9%98%9C-68faac6ff29)
   - 常用的 Port：HTTP: 80 , HTTPS:443 , MySQL：3306
 
-## curl
+## curl (Client URL)
+
+### 名字的差別
+
+- cURL：cURL 是一個專案，包括 libcurl 和 curl tool (即 curl )這兩個套件。
+- CURL：CURL 是一間公司的商標。
+  - curl.com 註冊於1997/11/19，並於1998/05/18 註冊商標。
+  - curl 的網址實際上是 cure.se，並且於1998/03/20 首次發布。
+
+### curl 介紹
+
+- curl 是 Linux 上的 command line tool，可以透過 HTTP Protocol 下載和上傳檔案。
+- curl 基本指令格式：`curl [options] [URL]`
+- 常見指令：
+  - curl 後面加網址，就會在終端機內顯示回傳的 response，可能是 HTML、JSON 或是 XML 等格式，根據輸入的 URL 內容而定。
+    - `curl https://www.google.com`
+  - 用 -o/-O 命名下載的檔案。
+    - `curl -o [name] [URL]`
+    - 使用預設檔名： `curl -O [URL]`
+  - 跟隨 301/302 Redirect。
+    - `curl -L http://google.com`
+    - 適用於網站搬家/維護/促銷，有定義 301/302 轉址時。
+    - 301 通常為永久性轉址，302 則是暫時性轉址。
+    - Ref: [一篇搞懂什麼是 301/302轉址？](https://www.pongo.com.tw/what-is-a-301-or-302-redirect/)
+  - 更多常用指令：[Linux Curl 超詳細教學(常用篇)](https://www.cjkuo.net/linux-curl-detail/)
+
+### 參考資料
+
+[Linux Curl Command 指令與基本操作入門教學](https://blog.techbridge.cc/2019/02/01/linux-curl-command-tutorial/)<br/>
