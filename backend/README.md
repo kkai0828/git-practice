@@ -32,7 +32,7 @@ PORT=4000
 ```
 
 - 執行結果：<br/>
-  <img src="./assets/image/envPORT.png" width="300"/>
+  <img src="./assets/image/envPORT.png" width="500"/>
 
 ### 環境變數
 
