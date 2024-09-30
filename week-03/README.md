@@ -65,8 +65,10 @@
   - `finally`：如果有加上 `finally` 不論是 fulfilled 或 rejected，都會需要執行，例如 loader 無論有沒有拿到資料，最後都要關閉loader，就適合放在 `finally` 中。
 
 - Async/Await：是一種基於 Promise 之上的語法糖，比 Promise 的寫法更像是同步操作。
+
   - async：將函式標記為異步函式，異步函式就是指返回值為 Promise 物件的函式。
   - 異步函式可以使用其他的異步函式，不是使用 then() 而是用 await，await 會等 Promise 完成後直接返回最終的結果。
+
   ```
   // async 標註為異步函式
   async function getData() {
@@ -78,3 +80,7 @@
 
   getData();
   ```
+
+### 參考資料：
+
+[Promise 是什麼？有什麼用途？](https://www.explainthis.io/zh-hant/swe/what-is-promise)<br/>
