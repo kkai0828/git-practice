@@ -21,6 +21,24 @@
 
 - 我在宣告 port 時用 `const port = process.env.PORT || 3000` 來以環境變數設定，若沒有設定則預設 Port 3000。
 
+```
+// .env
+PORT=4000
+
+// package.json
+  "scripts": {
+    "dev" : "node --env-file=.env app.js"
+  },
+```
+
+### 環境變數
+
+- 在.env 檔中設定 PORT=4000，並在 package.json 中加入 `"dev" : "node --env-file=.env app.js"`
+  這樣在執行 `npm run dev` 指令時，就會用 .env 中設定的 PORT number 來執行 app.js。
+- 其他方法：
+  - `npm install dotnet` 並在 app.js 中 require('dotnet').config()。
+  - 每次使用的時候都設定：`PORT=4000 node app.js`，或將此指令指定給 `npm run dev`。
+
 ## 哪些檔案應該要放上 github repo? 為什麼選擇上傳/不上傳某些檔案，決策的要素是什麼？
 
 - 資安問題：如 .env 檔或任何存有密碼、個資、API Key 等資訊的檔案。
@@ -90,4 +108,3 @@ console.log(add(2, 3))
   - 常用的 Port：HTTP: 80 , HTTPS:443 , MySQL：3306
 
 ## curl
-
