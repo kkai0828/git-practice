@@ -10,26 +10,17 @@
 - 用來執行 npm run 指令的
 - 範例如下："test" 為名稱，通常依據一些規範如dev, build, test等。
 - 後面的 "node test.js" 則為實際指令，這代表在執行 `npm run test` 時，實際上是跑`node test.js`這個指令。
+  
+    ```
+    "scripts":{
+        "test": "node test.js"
+    }
+    ```
 
-```
-"scripts":{
-    "test": "node test.js"
-}
-```
-
-## Port number 要怎麼以環境變數來設定？
+## Port number 要怎麼以環境變數來設定？  
 
 - 我在宣告 port 時用 `const port = process.env.PORT || 3000` 來以環境變數設定，若沒有設定則預設 Port 3000。
 
-```
-// .env
-PORT=4000
-
-// package.json
-  "scripts": {
-    "dev" : "node --env-file=.env app.js"
-  },
-```
 
 - 執行結果：<br/>
   <img src="./assets/image/envPORT.png" width="500"/>
@@ -38,6 +29,17 @@ PORT=4000
 
 - 在.env 檔中設定 PORT=4000，並在 package.json 中加入 `"dev" : "node --env-file=.env app.js"`
   這樣在執行 `npm run dev` 指令時，就會用 .env 中設定的 PORT number 來執行 app.js。
+
+    ``` js
+    // .env
+      PORT=4000
+    
+    // package.json
+      "scripts": {
+        "dev" : "node --env-file=.env app.js"
+      },
+    ```
+
 - 其他方法：
   - `npm install dotnet` 並在 app.js 中 require('dotnet').config()。
   - 每次使用的時候都設定：`PORT=4000 node app.js`，或將此指令指定給 `npm run dev`。
@@ -53,36 +55,36 @@ PORT=4000
 - CJS：CommonJS 的模組系統，最初是為了在伺服器端使用 Node.js 而開發的，但也被廣泛用於前端開發。
 - CJS 使用 require 導入模組，module.export 或 exports 定義導出的內容
 
-```
-// math.js
-exports.add = function(a,b){
-    return a+b
-}
-
-// main.js
-var math = require('./main.js')
-console.log(math.add(2,3))
-```
+    ```js
+    // math.js
+    exports.add = function(a,b){
+        return a + b
+    }
+    
+    // main.js
+    var math = require('./main.js')
+    console.log(math.add(2,3))
+    ```
 
 - ESM：是 ECMAScript 的模組系統，從 ES6 開始成為 JS 的一部份。
 - 使用 import, export 來定義和導入模組。
-
-```
-// math.js
-export function add(a, b) {
-  return a + b
-}
-
-// main.js
-import { add } from './math.js'
-console.log(add(2, 3))
-```
+    
+    ```js
+    // math.js
+    export function add(a,b) {
+      return a + b
+    }
+    
+    // main.js
+    import { add } from './math.js'
+    console.log(add(2,3))
+    ```
 
 - 差異：
-
-1. 加載時間：ESM 是靜態加載，在編譯時就可以確定模組的依賴關係；CJS 是動態加載，在執行時依需求動態加載。
-2. 運行環境：ESM 可以在現代瀏覽器中使用，但需要在 <script> 標籤上使用 type="module" 屬性；而 CJS 主要用於 Node.js 環境。
-3. 預設導出：ESM 支援預設導出，可以使用 export default，而 CJS 沒有內建的預設導出機制。
+    
+    1. 加載時間：ESM 是靜態加載，在編譯時就可以確定模組的依賴關係；CJS 是動態加載，在執行時依需求動態加載。
+    2. 運行環境：ESM 可以在現代瀏覽器中使用，但需要在 <script> 標籤上使用 type="module" 屬性；而 CJS 主要用於 Node.js 環境。
+    3. 預設導出：ESM 支援預設導出，可以使用 export default，而 CJS 沒有內建的預設導出機制。
 
 ### 參考資料
 
