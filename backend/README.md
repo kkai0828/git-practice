@@ -31,6 +31,9 @@ PORT=4000
   },
 ```
 
+- 執行結果：<br/>
+  <img src="./assets/image/envPORT.png" width="300"/>
+
 ### 環境變數
 
 - 在.env 檔中設定 PORT=4000，並在 package.json 中加入 `"dev" : "node --env-file=.env app.js"`
