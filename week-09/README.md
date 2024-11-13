@@ -1,3 +1,4 @@
+## RAC
 **1. syntax error**
 unexpected ";" in /etc/nginx/nginx.conf:8
 解決方法：
@@ -26,3 +27,9 @@ sudo systemctl enabled nginx // reboot時開啟nginx
 看 `/etc/nginx/sites-enabled/default` 中
 有 `root /var/myweb`
 到 `/var/myweb` 更改權限： `sudo chmod 644 /var/myweb/index.html`
+
+## 進階題：
+
+硬碟爆炸怎麼處理？
+`sudo df -h`
+-> 清除 log 和垃圾文件
