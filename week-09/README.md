@@ -1,4 +1,5 @@
 ## RAC
+
 **1. syntax error**
 unexpected ";" in /etc/nginx/nginx.conf:8
 解決方法：
@@ -32,4 +33,8 @@ sudo systemctl enabled nginx // reboot時開啟nginx
 
 硬碟爆炸怎麼處理？
 `sudo df -h`
+<img src="./assets/harddisk-1.png.png" width=400 />
 -> 清除 log 和垃圾文件
+<img src="./assets/harddisk-2.png.png" width=400 />
+<img src="./assets/harddisk-3.png.png" width=400 />
+-> 成功釋放硬碟空間
