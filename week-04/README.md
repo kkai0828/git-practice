@@ -2,7 +2,7 @@
 
 ## Puclic IP
 
-`IP: 13.55.122.149`
+`IP: 18.182.48.142`
 
 ## What is instance type?
 
