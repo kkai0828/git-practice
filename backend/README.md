@@ -40,7 +40,7 @@
   ```
 
 - 其他方法：
-  - `npm install dotnet` 並在 app.js 中 require('dotnet').config()。
+  - `npm install dotenv` 並在 app.js 中 require('dotenv').config()。
   - 每次使用的時候都設定：`PORT=4000 node app.js`，或將此指令指定給 `npm run dev`。
 
 ## 哪些檔案應該要放上 github repo? 為什麼選擇上傳/不上傳某些檔案，決策的要素是什麼？
