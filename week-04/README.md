@@ -33,7 +33,7 @@
 ```
    server {
    listen 80;
-   server_name 52.194.253.186;
+   server_name 18.182.48.142;
 
    location / {
        proxy_pass <http://localhost:3000>;
